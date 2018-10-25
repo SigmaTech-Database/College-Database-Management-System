@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
-import Navbar from './components/Navbar'
+import CustomNavbar from './components/myNavbar'
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <Navbar />
+          <CustomNavbar />
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
