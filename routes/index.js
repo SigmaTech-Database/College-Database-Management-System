@@ -9,7 +9,8 @@ const connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
 	password: 'root',
-	database: 'college'
+	database: 'college',
+	socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
 });
 //***************************
 /* GET home page. */
