@@ -2,6 +2,16 @@ var express = require('express');
 var router = express.Router();
 var expressValidator = require('express-validator');
 var passport = require('passport');
+
+//***************************
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+	host: 'localhost',
+	user: 'root',
+	password: 'root',
+	database: 'college'
+});
+//***************************
 /* GET home page. */
 router.get('/', function(req, res) {
 	console.log(req.user);
@@ -37,6 +47,48 @@ router.get('/register', function(req, res, next) {
 		title: 'Registration'
 	});
 });
+
+router.get('/add', function(req, res, next) {
+	res.render('add', {
+		title: 'Add class'
+	});
+});
+
+router.get('/delete', function(req, res, next) {
+	res.render('delete', {
+		title: 'Delete Class'
+	});
+});
+
+router.post('/add', function(req, res, next) {
+
+	const ID = req.body.ID;
+	const Academic_year = req.body.Academic_year;
+	const Term = req.body.Term;
+	const Section_ID = req.body.Section_ID;
+	const Student_ID = req.body.Student_ID;
+
+	connection.query("INSERT INTO enrollment(ID,Academic_year,Term,Section_ID, Student_ID, Date_Enrolled) VALUES (?, ?, ?, ?, ?,NOW())", [ID, Academic_year, Term, Section_ID, Student_ID], (error, results, fields) => {
+		if (error) {
+			throw error;
+		}
+		res.redirect('/student_panel')
+	});
+});
+
+router.post('/delete', function(req, res, next) {
+
+	const Course_Name = req.body.Course_Name;
+	const Student_ID = req.body.Student_ID;
+
+	connection.query("DELETE e FROM enrollment e INNER JOIN section s ON e.Section_ID=s.ID WHERE e.Student_ID = '" + Student_ID + "' AND s.Course_Name='" + Course_Name + "';", (error, results, fields) => {
+		if (error) {
+			throw error;
+		}
+		res.redirect('/student_panel')
+	});
+});
+
 
 
 router.post('/register', function(req, res, next) {

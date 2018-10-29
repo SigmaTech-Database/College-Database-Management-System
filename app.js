@@ -16,7 +16,7 @@
   const index = require('./routes/index');
   const users = require('./routes/users');
   const student_panel = require('./routes/student_panel');
-  const add_class = require('./routes/add_class');
+  //const add = require('./routes/add');
 
   var app = express();
   // DATABASE WIll not work without this. DONT DELETE IT
@@ -60,7 +60,7 @@
   app.use('/', index);
   app.use('/users', users);
   app.use('/student_panel', student_panel);
-  app.use('/add_class', add_class);
+  //app.use('/add', add);
 
 
   passport.use(new LocalStrategy(

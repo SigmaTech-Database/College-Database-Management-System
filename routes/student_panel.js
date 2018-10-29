@@ -7,7 +7,9 @@ const connection = mysql.createConnection({
 	password: 'root',
 	database: 'college'
 });
-const query_student_schedule = "SELECT  DISTINCT Course_Name, Room, Day, Start_Time, Finish_Time FROM class_schedule JOIN enrollment JOIN section WHERE Student_ID= 564 and Section_ID = Schedule_ID and Term='Fall' and Academic_year=2018;";
+
+
+const query_student_schedule = "SELECT c.Name, c.Day, c.Room, c.Start_Time, c.Finish_Time FROM student st JOIN enrollment e ON e.Student_ID = st.ID JOIN section s ON e.Section_ID = s.ID JOIN class_schedule c ON s.Schedule_ID = c.ID WHERE st.ID = 726 OR st.First_Name = 'Flo' AND e.Academic_year = '2018' and e.Term = 'Fall';";
 
 
 router.get('/', function(req, res) {
