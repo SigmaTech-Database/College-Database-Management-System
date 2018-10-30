@@ -122,6 +122,7 @@ router.post('/register', function(req, res, next) {
 
 		const db = require('../db.js');
 		//MAKE QUERY TO POST DATA TO database
+		
 		db.query('INSERT INTO user (first_name, last_name, username, email, password) VALUES (?,?,?,?,?)', [first_name, last_name, username, email, password], function(error, results, fields) {
 			if (error) throw error;
 
