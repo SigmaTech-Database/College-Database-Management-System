@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<style type="text/css">
+    .brand-logo img {
+        height: 60px;
+        padding-left: 25px;
+        padding-top: 10px;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    #profile-card {
+        padding: 20px 70px;
+    }
+
+    .card {
+        margin-top: 50px;
+    }
+</style>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue darken-2">
+                <a href="#" class="brand-logo"><img class="responsive-img" src="./public/img/logo.png"></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#"><i class="material-icons">search</i></a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Search Classes</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col s12 m1 valign-wrapper">
+                <div class="card" id="profile-card">
+                    <div class="card-content">
+                        <span class="card-title">Name</span>
+                        <p class="center-align">ID</p>
+                        <p class="center-align">Major</p>
+                        <p class="center-align">Email</p>
+                    </div>
+
+                    <div class="card-action right-align">
+                        <a href="#" "><i class=" material-icons">edit</i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 offset-m3">
+                <div class="card blue-text text-darken-2">
+                    <div class="card-content blue-text">
+                        <span class="card-title">My Schedule</span>
+                        <table class="black-text">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Day</th>
+                                    <th>Room</th>
+                                    <th>Start Time</th>
+                                    <th>Finish Time</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>CSC 103</td>
+                                    <td>Monday, Wednesday</td>
+                                    <td>MR1</td>
+                                    <td>10:00am</td>
+                                    <td>11:15am</td>
+                                </tr>
+                                <tr>
+                                    <td>CSC 104</td>
+                                    <td>Tuesday, Thursday</td>
+                                    <td>NAC 4/201</td>
+                                    <td>3:00pm</td>
+                                    <td>4:40pm</td>
+                                </tr>
+                                <tr>
+                                    <td>ENGL 21007</td>
+                                    <td>Tuesday, Thursday</td>
+                                    <td>NAC 6/306</td>
+                                    <td>9:30am</td>
+                                    <td>10:45am</td>
+                                </tr>
+                                <tr>
+                                    <td>HIST 24100</td>
+                                    <td>Friday</td>
+                                    <td>NAC 6/220</td>
+                                    <td>2:00pm</td>
+                                    <td>3:40pm</td>
+                                </tr>
+                                <tr>
+                                    <td>CHEM 10301</td>
+                                    <td>Wednesday, Friday</td>
+                                    <td>MR2</td>
+                                    <td>11:00am</td>
+                                    <td>12:15am</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-action right-align">
+                        <a href="#" "><i class=" material-icons">edit</i></a>
+                        <a href="#"><i class="material-icons">add</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
