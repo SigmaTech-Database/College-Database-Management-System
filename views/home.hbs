@@ -1,455 +1,331 @@
-<!doctype html>
-
-
-
+<!DOCTYPE html>
 <html>
-    <meta charset ="utf-8">
-    <meta name ="viewport" content="width=device-width, intial-scale=1">
-    <title>Cuny First</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-
-     <style>
-     /*
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-General Configurations
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/
-* {
-   margin: 0;
-   padding: 0;
-   -webkit-box-sizing: border-box;
-           box-sizing: border-box;
-}
-html{
-   font: normal 16px sans-serif;
-   color: #555;
-}
-ul, nav{
-   list-style: none;
-}
-/*nav-bar style*/
-nav{
-   list-style: none;
-}
-a{
-   text-decoration: none;
-   opacity: 0.75;
-   margin: 0 15px;
-   color: white;
-   cursor: pointer;
-}
-a:hover{
-   opacity: 1;
-}
-a.btn{
-   border-radius: 4px;
-   text-transform: uppercase;
-   font-weight: bold;
-   text-align: center;
-   background-color: #3f51b5;
-   opacity: 1;
-   margin-top: 10px;
-   color: white
-}
-
-
-section{
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-orient: vertical;
-   -webkit-box-direction: normal;
-       -ms-flex-direction: column;
-           flex-direction: column;
-   -webkit-box-align: center;
-       -ms-flex-align: center;
-           align-items: center;
-   padding: 100px;
-}
-
-/*
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-Header Configurations
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/
-
-header{
-   position: absolute;
-   top: 0;
-   left: 0;
-   z-index: 10;
-   width: 100%;
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -webkit-box-pack: justify;
-       -ms-flex-pack: justify;
-           justify-content: space-between;
-   -webkit-box-align:center;
-       -ms-flex-align:center;
-           align-items:center;
-   padding: 35px 100px 0;
-   -webkit-animation: 1s fadein 0.5s forwards;
-           animation: 1s fadein 0.5s forwards;
-   opacity: 0.5;
-   color: white;
-}
-@-webkit-keyframes fadein{
-   100%{
-       opacity: 1;
-   }
-}
-@keyframes fadein{
-   100%{
-       opacity: 1;
-   }
-}
-
-header h2{
-   font-family: "Quicksand, sans-serif";
-   color: white;
-}
-
-header nav{
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   margin-right: -15px;
-}
-header nav li{
-   margin: 0 15px;
-   color: white;
-}
-@media (max-width: 1000px){
- header{
-   padding: 20px 50px;
- }
-}
-
-
-@media (max-width: 700px){
- header{
-   -webkit-box-orient: vertical;
-   -webkit-box-direction: normal;
-       -ms-flex-direction: column;
-           flex-direction: column;
- }
-
- header h2{
-   margin-bottom: 15px;
- }
-}
-
-
-
-/*
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-Cover and Image Animation configuration
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/
-.hero{
-   position: relative;
-   -webkit-box-pack: center;
-       -ms-flex-pack: center;
-           justify-content: center;
-   text-align: center;
-   min-height: 100vh;
-   color: white;
-}
-.hero .background-image{
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background-size: cover;
-   z-index: -1;
-   background-color: #80a3db;
-   -webkit-animation: 15s change 1s forwards;
-           animation: 15s change 1s forwards;
-   -webkit-animation-iteration-count:infinite;
-           animation-iteration-count:infinite;
-}
-
-@keyframes change{
-   0%{
-   background-image: url(https://i.redd.it/rc2n05y61vz01.jpg);
-   }
-   25%{
-      background-image: url(https://i.redd.it/rc2n05y61vz01.jpg);
-   }
-   50%{
-       background-image: url(https://pbs.twimg.com/media/DO2rRSuW4AA1tEg.jpg);
-
-   }
-   75%{
-       background-image: url(http://bamd.brooklyn.edu/images/campus.jpg);
-
-   }
-   100%{
-       background-image: url(http://catalog.hunter.cuny.edu/mime/media/14/1601/008-1501001974-O.jpg);
-
-   }
-}
-.hero h1{
-   font: bold 60px "Open Sans", sans-serif;
-   margin-bottom: 40px;
-   color: Red;
-}
-.hero h3{
-   font: normal 28px "Open Sans", sans-serif;
-   margin-bottom: 40px;
-   color: red;
-}
-.hero a.btn{
-   padding: 20px 46px;
-}
-.hero-content-area{
-   opacity: 0;
-   margin-top: 100px;
-   -webkit-animation: 1s slidefade 1s forwards;
-           animation: 1s slidefade 1s forwards;
-}
-@-webkit-keyframes slidefade{
-   100%{
-       opacity: 1;
-       margin: 0;
-   }
-}
-@keyframes slidefade{
-   100%{
-       opacity: 1;
-       margin: 0;
-   }
-}
-
-
-.grid{
-   width: 100%;
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   -ms-flex-wrap: wrap;
-       flex-wrap: wrap;
-   -webkit-box-pack: center;
-       -ms-flex-pack: center;
-           justify-content: center;
-}
-
-hr{
-   width: 100%;
-   height: 2px;
-   background-color: #3f51b5;
-   border: 0;
-   margin-bottom: 50px;
-}
-
-
-
-@media (max-width: 800px){
-
- .hero{
-   min-height: 600px;
- }
- .hero h1{
-   font-size: 48px;
- }
-
- .hero h3{
-   font-size: 24px;
- }
-
- .hero a.btn{
-   padding: 15px 40px;
- }
-
-}
-
-
-/*
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-Section Configurations
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/
-section h3.title{
-   text-transform: capitalize;
-   font: bold 32px "Open Sans", sans-serif;
-   margin-bottom: 30px;
-   text-align: center;
-}
-
-
-.destinations .grid li{
-   height: 350px;
-   padding: 20px;
-   background-clip: content-box;
-   background-size: cover;
-   background-position: center;
-}
-
-.destinations .grid li.small{
-   -ms-flex-preferred-size: 30%;
-       flex-basis: 30%;
-}
-
-.destnations .grid li.large{
-   -ms-flex-preferred-size: 70%;
-       flex-basis: 70%;
-}
-
-
-
-
-
-
-
-/*---------------------
- Contact Section
----------------------*/
-
-.contact{
- background-color: #f7f7f7;
-}
-
-.contact form{
- display: -webkit-box;
- display: -ms-flexbox;
- display: flex;
- -webkit-box-align: center;
-     -ms-flex-align: center;
-         align-items: center;
- -webkit-box-pack: center;
-     -ms-flex-pack: center;
-         justify-content: center;
- -ms-flex-wrap: wrap;
-     flex-wrap: wrap;
-
- max-width: 800px;
- width: 80%;
-}
-
-.contact form input{
- padding: 15px;
- -webkit-box-flex: 1;
-     -ms-flex: 1;
-         flex: 1;
- margin-right: 30px;
- font-size: 18px;
- color: #555;
-}
-
-.contact form .btn{
- padding: 18px 42px;
-}
-
-
-@media (max-width: 800px){
-
- .contact form input{
-   -ms-flex-preferred-size: 100%;
-       flex-basis: 100%;
-   margin: 0 0 20px 0;
- }
-
-}
-
-
-
-
-/*-------------
- Footer
--------------*/
-
-footer{
- display: -webkit-box;
- display: -ms-flexbox;
- display: flex;
- -webkit-box-orient: vertical;
- -webkit-box-direction: normal;
-     -ms-flex-direction: column;
-         flex-direction: column;
- -webkit-box-align: center;
-     -ms-flex-align: center;
-         align-items: center;
- text-align: center;
- color: #fff;
- background-color: #414a4f;
- padding: 60px 0;
-}
-
-footer ul{
- display: -webkit-box;
- display: -ms-flexbox;
- display: flex;
- margin-bottom: 25px;
- font-size: 32px;
-}
-
-footer ul li{
- margin: 0 8px;
-}
-
-footer ul li:first-child{
- margin-left: 0;
-}
-
-footer ul li:last-child{
- margin-right: 0;
-}
-
-footer p{
- text-transform: uppercase;
- font-size: 14px;
- color: rgba(255,255,255,0.6);
- margin-bottom: 10px;
-}
-
-footer p a{
- color: #fff;
-}
-
-@media (max-width: 700px){
-
- footer{
-   padding: 80px 15px;
- }
-
-}
-
-
-     </style>
-
-    </head>
-    <body>
-        <header>
-            <h2 href="http://www2.cuny.edu/">CUNY PORTAL</h2>
-            <nav>
-               <li><a href="/register">Register</a</li>
-                <li><a href="#">Contact</a> </li>
-
-            </nav>
-            </header>
-
-            <section class="hero">
-            <div class="background-image" style="background-image: url(https://i.redd.it/rc2n05y61vz01.jpg)"></div>
-                <div class="hero-content-area">
-                <h1>CUNY First</h1>
-                    <h3> The City University Of New York</h3>
-                <a href="/login" class="btn">Login</a>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CUNYFirst</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
+    <link rel="icon" href="./public/img/logo.png">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .row {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    body {
+        font-family: Rubik;
+    }
+
+    .hero {
+        position: absolute;
+        z-index: 1;
+        width: 1140px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero p {
+        color: white;
+        font-size: 20px;
+        margin: 20px 0 25px;
+        letter-spacing: 2px;
+        font-weight: 300;
+    }
+
+    header {
+        background-image: linear-gradient(rgb(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+            url(/img/svg_bg2.jpg);
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+    }
+
+    h1 {
+        color: white;
+        font-size: 45px;
+    }
+
+    .main-nav {
+        list-style: none;
+        float: right;
+        margin-top: 25px;
+    }
+
+    .main-nav li {
+        display: inline-block;
+        letter-spacing: 1px;
+        /* margin-top: 20px; */
+        margin-left: 20px;
+    }
+
+    .main-nav li a {
+        color: white;
+        text-decoration: none;
+        font-size: 110%;
+    }
+
+    .main-nav li a:hover {
+        cursor: pointer;
+        color: #fdcb6e;
+        border-bottom: 2px solid #fdcb6e;
+        transition: all 0.1s ease-in;
+        padding: 7px 0;
+    }
+
+    .logo img {
+        height: 100px;
+        float: left;
+        margin-top: 10px;
+    }
+
+    .btn {
+        border: 1px solid #e17055;
+        padding: 10px 30px;
+        color: white;
+        text-decoration: none;
+        border-radius: 7px;
+        margin-right: 15px;
+    }
+
+    .btn-half {
+        background-color: #e17055;
+    }
+
+    .btn-full {
+        background-color: #e17055;
+    }
+
+    .btn-class {
+        margin-top: 40px;
+    }
+
+    .about h3 {
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    .about {
+        padding-top: 40px;
+    }
+
+    h3:after {
+        width: 50px;
+        height: 2px;
+        background-color: #e17055;
+        display: block;
+        content: '';
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .about-description {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .container {
+        padding-bottom: 105px;
+    }
+
+    .about-description {
+        padding-bottom: 33px;
+    }
+
+    .team-member {
+        color: black;
+    }
+
+    .features i {
+        margin-left: 35%;
+        font-size: 60px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .features {
+        color: white;
+        text-justify: align;
+        margin-bottom: 50px;
+        background-color: #15b2ff;
+        padding-top: 40px;
+        padding-bottom: 45px;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="logo">
+                <img src="img/logo.png">
+            </div>
+            <ul class="main-nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="/register">Sign Up</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </div>
+
+        <div class="hero">
+            <div class="row">
+                <div class="col-md-6">
+                    <div style="margin-top: 160px;"></div>
+                    <h1>CUNYFirst</h1>
+                    <p>The modern life of college planning and success made easy.
+                        <br>Accessible and Easy-to-use modern style navigation right at your fingertips.
+                        <br>To provide college life
+                        success!</p>
+                    <div class="btn-class">
+                        <a href="#features" class="btn btn-half">Show Me More</a>
+                        <a href="/register" class="btn btn-full">Get Started Now</a>
+                    </div>
                 </div>
+                <div class="col-lg-6">
+                    <div style="margin-top: 50px;"></div>
+                    <img src="/img/books.png" class="image-responsive" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
 
-            </section>
+    <section class="about" id="about">
+        <h3 class="about-header text-center">About Us</h3>
+        <p class="about-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Minima illum a quam magni veniam eos deserunt ad odit quia,
+            culpa fugiat possimus quae omnis cum voluptates dignissimos.
+            Enim, earum odit?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Minima illum a quam magni veniam eos deserunt ad odit quia,
+            culpa fugiat possimus quae omnis cum voluptates dignissimos.
 
-        <section class="destinations">
-        <h3 class="title">This is not actual CUNY First. (Unfortunately)</h3>
-            <p>Created by: Vitaliy Kril, Oleksandr Kozlenko, Jacinta More, Michelle Uy</p>
-            <hr>
+        </p>
 
-        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <p class="about-description">
+                        <h4 class="text-center team-member">Michelle Uy</h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Minima illum a quam magni veniam eos deserunt ad odit quia,
+                        <br>culpa fugiat possimus quae omnis cum voluptates dignissimos.
+                        <br>Enim, earum odit?
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="about-description">
+                        <h4 class="text-center team-member">Jacinta Moore</h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Minima illum a quam magni veniam eos deserunt ad odit quia,
+                        <br>culpa fugiat possimus quae omnis cum voluptates dignissimos.
+                        <br>Enim, earum odit?
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="about-description">
+                        <h4 class="text-center team-member">Oleksandr Kozlenko</h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Minima illum a quam magni veniam eos deserunt ad odit quia,
+                        <br>culpa fugiat possimus quae omnis cum voluptates dignissimos.
+                        <br>Enim, earum odit?
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p class="about-description">
+                        <h4 class="text-center team-member">Vitaliy Kril</h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Minima illum a quam magni veniam eos deserunt ad odit quia,
+                        <br>culpa fugiat possimus quae omnis cum voluptates dignissimos.
+                        <br>Enim, earum odit?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h3 class="text-center">Features</h3>
+
+        <div class="container">
+            <figure>
+                <div class="col-md-3">
+                    <i class="fas fa-search"></i>
+                    <p>
+                        Modern look and feel to searching your classes with the most minimal effort.
+                        <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Minima illum a quam magni veniam eos deserunt ad odit quia,
+                        <br>culpa fugiat possimus quae omnis cum voluptates dignissimos.
+                        <br>Enim, earum odit?
+                    </p>
+                </div>
+            </figure>
 
 
+            <figure>
+                <div class="col-md-3">
+                    <img src="">
+                    <i class="fas fa-user-graduate"></i>
+                    <p>You get access to all the neccessary information all in one click of a button.
+                        <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Minima illum a quam magni veniam eos deserunt ad odit quia,
+                        <br>culpa fugiat possimus quae omnis cum voluptates dignissimos.
+                        <br>Enim, earum odit?
+                    </p>
+                </div>
+            </figure>
 
-    </body>
+
+            <figure>
+                <div class="col-md-3">
+                    <img src="">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <p>
+                        Know every single information about your instructors and get instant department support.
+                        <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Minima illum a quam magni veniam eos deserunt ad odit quia,
+                        <br>culpa fugiat possimus quae omnis cum voluptates dignissimos.
+                        <br>Enim, earum odit?
+                    </p>
+                </div>
+            </figure>
+
+            <figure>
+                <div class="col-md-3">
+                    <img src="">
+                    <i class="far fa-calendar-alt"></i>
+                    <p>
+                        Get easy integration of all your semester courses with a professonial class schedule design to
+                        your
+                        liking.
+
+                        <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br>Minima illum a quam magni veniam eos deserunt ad odit quia,
+                        <br>culpa fugiat possimus quae omnis cum voluptates dignissimos.
+                        <br>Enim, earum odit?
+                    </p>
+                </div>
+            </figure>
+        </div>
+    </section>
+</body>
+
 </html>
