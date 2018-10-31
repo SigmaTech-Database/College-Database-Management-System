@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Class</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<style type="text/css">
+    .card {
+        margin-top: 150px;
+    }
+
+    .row .col {
+        float: none !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title black-text center-align">Search for Classes</span>
+                        <form>
+                            <div class="row">
+                                <i class="material-icons">school</i>
+                                <span>Institution</span>
+                                <select class="browser-default">
+
+                                    <option value="" disabled selected>Choose your College</option>
+                                    <option value="1">Baruch College</option>
+                                    <option value="2">Brooklyn College</option>
+                                    <option value="3">City College</option>
+                                    <option value="4">Hunter College</option>
+                                    <option value="5">Lehman College</option>
+                                    <option value="6">Queens College</option>
+                                    <option value="7">Staten Island</option>
+                                    <option value="8">York College</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <span><i class="material-icons">date_range</i>Term</span>
+                                <select class="browser-default">
+                                    <option value="" disabled selected>Select a Term</option>
+                                    <option value="1">Fall</option>
+                                    <option value="2">Spring</option>
+                                    <option value="3" disabled>Winter</option>
+                                    <option value="4" disabled>Summer</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <span><i class="material-icons">class</i>Subject</span>
+                                <select class="browser-default">
+                                    <option value="" disabled selected>Select a Subject</option>
+                                    <option value="1">CSC</option>
+                                    <option value="2">MATH</option>
+                                    <option value="3">CHEM</option>
+                                    <option value="4">ENGL</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s6" <span><i class="material-icons">info</i>Course Number</span>
+                                    <input id="first_name" type="text" class="validate center-align">
+                                </div>
+
+                        </form>
+                    </div>
+                    <div class="card-action center-align">
+                        <input type="submit" class="btn" value="Search">
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>
