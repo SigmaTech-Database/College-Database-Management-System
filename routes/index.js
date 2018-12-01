@@ -61,6 +61,42 @@ router.get('/delete', function(req, res, next) {
 	});
 });
 
+router.get('/search_result', function(req, res, next) {
+	res.render('search_result', {
+
+	});
+});
+
+router.get('/search', function(req, res, next) {
+	res.render('search', {
+
+	});
+});
+
+
+
+
+router.post('/search_complete', function(req, res, next) {
+	const name = req.body.name;
+	const last_name = req.body.last_name;
+	const search_query = "SELECT c.Name, c.Description, cl.Day, cl.Room, cl.Start_Time, cl.Finish_Time, c.Credits,c.Term, i.First_Name, i.Last_Name FROM class_schedule cl JOIN section s ON s.schedule_id = cl.ID JOIN instructor i ON s.instructor_id = i.ID JOIN course c ON c.name = s.course_name WHERE c.name ='" + name + "' OR i.last_name = '" + last_name + "';";
+	connection.query(search_query, (error, results, fields) => {
+
+		if (error) {
+			throw error;
+		}
+		res.render('search_result', {
+
+			results
+
+		});
+	});
+});
+
+
+
+
+
 router.post('/add', function(req, res, next) {
 
 	const ID = req.body.ID;
@@ -122,11 +158,11 @@ router.post('/register', function(req, res, next) {
 
 		const db = require('../db.js');
 		//MAKE QUERY TO POST DATA TO database
-		
+
 		db.query('INSERT INTO user (first_name, last_name, username, email, password) VALUES (?,?,?,?,?)', [first_name, last_name, username, email, password], function(error, results, fields) {
 			if (error) throw error;
 
-			db.query('SELECT LAST_INSERT_ID() as user_id', function(error, results, fields) {
+			db.query('SELECT LAST_INSERT_id() as user_id', function(error, results, fields) {
 				if (error) throw error;
 
 				const user_id = results[0];

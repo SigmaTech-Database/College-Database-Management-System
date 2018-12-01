@@ -1,151 +1,118 @@
-{{!--For testing--}}
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title></title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-<style>
-  @import url('https://fonts.googleapis.com/css?family=Lato');
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  * {
-    font-family: Lato;
-  }
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 
-  h1 {
-    font-size: 30px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 10px;
-  }
+<style type="text/css">
+    .brand-logo img {
+        height: 60px;
+        padding-left: 25px;
+        padding-top: 10px;
+    }
 
-  table {
-    width: 70%;
-    table-layout: fixed;
-  }
+    .card-title {
+        text-align: center;
+    }
 
-  .tbl-header {
-    background-color: rgba(255, 255, 255, .3);
-  }
+    #profile-card {
+        padding: 20px 70px;
+    }
 
-  .tbl-content {
-    height: auto;
-    overflow-x: auto;
-    margin-top: 0px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-  }
-
-  th {
-    padding: 10px 10px;
-    text-align: left;
-    font-weight: 700;
-    font-size: 16px;
-    color: #fff;
-    text-transform: uppercase;
-  }
-
-  td {
-    padding: 15px;
-    text-align: left;
-    vertical-align: middle;
-    font-weight: 600;
-    font-size: 15px;
-    color: #fff;
-    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
-  }
-
-
-  /* demo styles */
-
-  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
-
-  body {
-    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-    background: linear-gradient(to right, #253481, #2557c4);
-    font-family: 'Roboto', sans-serif;
-  }
-
-  section {
-    margin: 50px;
-  }
-
-
-  /* follow me template */
-  .made-with-love {
-    margin-top: 40px;
-    padding: 10px;
-    clear: left;
-    text-align: center;
-    font-size: 10px;
-    font-family: arial;
-    color: #fff;
-  }
-
-  .made-with-love i {
-    font-style: normal;
-    color: #F50057;
-    font-size: 14px;
-    position: relative;
-    top: 2px;
-  }
-
-  .made-with-love a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .made-with-love a:hover {
-    text-decoration: underline;
-  }
-
-
-  /* for custom scrollbar for webkit browser*/
-
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
+    .card {
+        margin-top: 50px;
+    }
 </style>
 
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue darken-2">
+                <a href="#" class="brand-logo"><img class="responsive-img" src="./public/img/logo.png"></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="/search">Search Classes</a></li>
+                  <li><a href="/add">Add Class</a></li>
+                  <li><a href="/delete">Delete Class</a></li>
+                  <li><a href="/">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="/search">Search Classes</a></li>
+        <li><a href="/add">Add Class</a></li>
+        <li><a href="/delete">Delete Class</a></li>
+        <li><a href="/">Logout</a></li>
+    </ul>
 
-<h1>Welcome, {{results.1.first_name}}</h1>
 
-<section>
-  <!--for demo wrap-->
-  <h1>Class Schedule</h1>
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Day</th>
-          <th>Room</th>
-          <th>Start Time</th>
-          <th>Finish Time</th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tbody>
-        {{#each results}}
-        <tr>
-          <td>{{Name}} </td>
-          <td>{{Day}}</td>
-          <td>{{Room}}</td>
-          <td>{{Start_Time}}</td>
-          <td>{{Finish_Time}}</td>
-        </tr>
+    <div class="container">
+        <div class="row">
 
-        {{/each}}
+            <div class="col s12 m1 valign-wrapper">
+                <div class="card" id="profile-card">
+                    <div class="card-content">
+                        <span class="card-title">{{results.1.first_name}}</span>
+                        <p class="center-align">ID</p>
+                        <p class="center-align">Major</p>
+                        <p class="center-align">Email</p>
+                    </div>
 
-      </tbody>
-    </table>
-  </div>
-</section>
+                    <div class="card-action right-align">
+                        <a href="#" "><i class=" material-icons">edit</i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 offset-m3">
+                <div class="card blue-text text-darken-2">
+                    <div class="card-content blue-text">
+                        <span class="card-title">My Schedule</span>
+                        <table class="black-text">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Day</th>
+                                    <th>Room</th>
+                                    <th>Start Time</th>
+                                    <th>Finish Time</th>
+                                </tr>
+                            </thead>
+
+
+                              <tbody>
+                                {{#each results}}
+                                  <tr>
+                                    <td>{{Name}} </td>
+                                    <td>{{Day}}</td>
+                                    <td>{{Room}}</td>
+                                    <td>{{Start_Time}}</td>
+                                    <td>{{Finish_Time}}</td>
+                                  </tr>
+
+                                {{/each}}
+
+                              </tbody>
+
+                        </table>
+                    </div>
+                    <div class="card-action right-align">
+                        <a href="#" "><i class=" material-icons">edit</i></a>
+                        <a href="#"><i class="material-icons">add</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

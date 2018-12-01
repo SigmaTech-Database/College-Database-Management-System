@@ -14,7 +14,7 @@ const query_student_schedule = "SELECT c.Name, c.Day, c.Room, c.Start_Time, c.Fi
 const query_student_name = "SELECT first_name FROM stduent.id = 972";
 
 router.get('/', function(req, res) {
-
+		connection.query(query_student_name, (error, results, fields)=> {
 		connection.query(query_student_schedule, (error, results, fields) => {
 			if (error) {
 				throw error;
@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
 				results
 			});
 		});
-
+	});
 });
 
 
